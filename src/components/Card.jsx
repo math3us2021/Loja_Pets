@@ -1,5 +1,7 @@
-import React from "react";
+import React  from "react";
 import './Card.css';
+import {Link} from 'react-router-dom'
+
 
 
 export default  (props) => {
@@ -26,25 +28,37 @@ export default  (props) => {
             <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_sUWHGI36ykVALQcJyfXdPEgmdPunowWzEGPtzRWyCJ6jhAtL_8Pco-OaOM5zQ-1W9Js&usqp=CAU" alt="Imagem de capa do card"></img>)
     }
 
+    // function Modal() {
+    //     const [modalVisible, setModalVisible] = useState(false);
+    //     return (
+    //         <div>
+    //             <button onClick={()=> setModalVisible(true)}></button>
+    //         </div>
+    //     )
+    // }
 
     return (
         <div>
             
         <div className="card" style={{width: "18rem"}}>
             {typeImage()}
-                <div class="card-body">
+                <div className="card-body">
                     
-                    <h3 class="card-title"><strong>Nome: </strong>{props.name}</h3>
-                    <p class="card-text"><strong>Tipo   : </strong>{props.type}</p>
+                    <h3 className="card-title"><strong>Nome: </strong>{props.name}</h3>
+                    <p className="card-text"><strong>Tipo   : </strong>{props.type}</p>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><strong>Idade: </strong>{props.age}</li>
-                    <li class="list-group-item"><strong>Peso: </strong>{props.weight}</li>
+                <ul className="list-group list-group-flush">
+                    <li className="list-group-item"><strong>Idade: </strong>{props.age}</li>
+                    <li className="list-group-item"><strong>Peso: </strong>{props.weight}</li>
                 </ul>
-                <div class="card-body">
-                <button type="button" class="btn btn-danger" name="Deletar" onClick={() => props.handleDelete(props.id)} >Deletar </button>
-                <button type="button" class="btn btn-secondary" name="Editar"  >Editar </button>
-                    
+                <div className="card-body">
+                <button type="button" className="btn btn-danger" name="Deletar" onClick={() => props.handleDelete(props.id)} >Deletar </button>
+
+                <Link to={`/edit/${props.id}`}>
+                    <button type="button" className="btn btn-warning" name="Editar" >Editar </button>
+                </Link>
+               
+                
                 </div>
         </div>
         </div>

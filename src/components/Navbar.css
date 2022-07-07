@@ -12,6 +12,9 @@
     color: rgba(178, 181, 184, 0.77);
     width: 500px;
     justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-left: 40%;
 
     
     
