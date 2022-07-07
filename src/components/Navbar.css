@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+.titulo{
+    font-style: italic;
+    font-weight: 500;
+    font-size: 100px;
+    background: #232332;
+    background: -moz-linear-gradient(left, #232332 0%, #494A59 50%, #858490 100%);
+    background: -webkit-linear-gradient(left, #232332 0%, #494A59 50%, #8a8993 100%);
+    background: linear-gradient(to right, #232332 0%, #494A59 50%, #8b8a96 100%);
+    border-radius: 300px;
+    font-family: Shadows Into Light, cursive;
+    color: rgba(178, 181, 184, 0.77);
+    width: 500px;
+    justify-content: center;
+
+    
+    
+}

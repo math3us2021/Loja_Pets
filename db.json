@@ -1,0 +1,60 @@
+{
+  "pets": [
+    {
+      "name": "Bordo",
+      "type": "Cachorro",
+      "age": 5,
+      "weight": 12,
+      "id": 4
+    },
+    {
+      "name": "Jack",
+      "type": "Cachorro",
+      "age": 6,
+      "weight": 30,
+      "id": 5
+    },
+    {
+      "name": "AnaLu",
+      "type": "gato",
+      "age": 3,
+      "weight": null,
+      "id": 6
+    },
+    {
+      "name": "undefined",
+      "type": "passaro",
+      "age": null,
+      "weight": null,
+      "id": 7
+    },
+    {
+      "name": "Matheus",
+      "type": "cachorro",
+      "age": 4,
+      "weight": 44,
+      "id": 8
+    },
+    {
+      "name": "undefined",
+      "type": "gato",
+      "age": null,
+      "weight": null,
+      "id": 10
+    },
+    {
+      "name": "undefined",
+      "type": "outros",
+      "age": null,
+      "weight": null,
+      "id": 11
+    },
+    {
+      "name": "undefined",
+      "type": "tartaruga",
+      "age": null,
+      "weight": null,
+      "id": 12
+    }
+  ]
+}

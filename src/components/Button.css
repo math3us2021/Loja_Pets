@@ -1,0 +1,11 @@
+.button{
+    
+    background: #232332;
+    background: -moz-linear-gradient(left, #232332 0%, #494A59 50%, #BEBCD1 100%);
+    background: -webkit-linear-gradient(left, #232332 0%, #494A59 50%, #BEBCD1 100%);
+    background: linear-gradient(to right, #232332 0%, #494A59 50%, #BEBCD1 100%);
+    border-radius: 8px;
+    border: 3px solid #232332;
+    width: 200px;
+    height: 100px;
+}
