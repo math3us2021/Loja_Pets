@@ -1,12 +1,16 @@
-import React  from "react";
+import React , {useState} from "react";
 import './Card.css';
 import {Link} from 'react-router-dom'
+
+import Modal from './Modal'
 
 
 
 export default  (props) => {
     
+    const [isModalVisible, setIsModalVisible] = useState(false);
     function typeImage(){
+
         const tipo = props.type;
         if (tipo.toLowerCase() === "cachorro")
             return (
@@ -28,14 +32,6 @@ export default  (props) => {
             <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_sUWHGI36ykVALQcJyfXdPEgmdPunowWzEGPtzRWyCJ6jhAtL_8Pco-OaOM5zQ-1W9Js&usqp=CAU" alt="Imagem de capa do card"></img>)
     }
 
-    // function Modal() {
-    //     const [modalVisible, setModalVisible] = useState(false);
-    //     return (
-    //         <div>
-    //             <button onClick={()=> setModalVisible(true)}></button>
-    //         </div>
-    //     )
-    // }
 
     return (
         <div>
@@ -57,7 +53,12 @@ export default  (props) => {
                 <Link to={`/edit/${props.id}`}>
                     <button type="button" className="btn btn-warning" name="Editar" >Editar </button>
                 </Link>
-               
+                <div>
+                <button onClick={()=> setIsModalVisible(true)}></button>
+                {isModalVisible ? <Modal onClose={() =>setIsModalVisible(false)}><h1><strong>Deseja realmente excluir o item</strong></h1></Modal> : null}
+                
+                </div>
+             
                 
                 </div>
         </div>
