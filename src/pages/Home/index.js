@@ -12,6 +12,7 @@ function App() {
 
   const [pets, setPets] = useState([]);
   const [formValues, setFormValues] = useState({});
+  const [filter,setFilter] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,20 +22,20 @@ function App() {
         type: String(formValues.type),
         age: Number(formValues.age),
         weight: Number(formValues.peso)
-        
+
       })
       .then((res) => {
         setPets([...pets, res.data]) /// data, traz a resposta do backend     
-      }) 
-      setFormValues({})
+      })
+    setFormValues({})
   }
 
   const handleDelete = (id) => {
     axios.delete(`http://localhost:3004/pets/${id}`)
       .then((res) => {
-        setPets(pets.filter(pet => pet.id !== id))      
+        setPets(pets.filter(pet => pet.id !== id))
       }
-      ) 
+      )
   }
 
   useEffect(() => {
@@ -45,18 +46,57 @@ function App() {
   const handleInputChange = (e) => { // escuta a mudança do input
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
+
   }
+
+  // const filterPets = pets.filter(pet => {pet.name.toLowerCase().includes(formValues.nome.toLowerCase())})
+  // console.log(filterPets)
+
+  // function handleSearc (e) {
+  //   const response = axios.get(`http://localhost:3000/pets?${formValues.name ?`type=${formValues.name}`: ""}`);
+  //   setPets(response.data);
+  // }
+
+  // const handleSearch = (e)=>{
+  //   e.preventDefault();
+  //   const filterPets = pets.filter(pet => {
+  //     return pet.name.toLowerCase().includes(formValues.nome.toLowerCase())
+  //   })
+  //   axios.get(`http://localhost:3000/pets?${formValues.name ?`type=${formValues.name}`: ""}`);
+  //   setPets(response.data);
+  //   setPets(filterPets)
+  // }
+
+  function handleSearch(e) {
+    e.preventDefault();
+    const response = axios
+      .get(`http://localhost:3004/pets?${filter ? `name=${filter}` : ""}`)
+      .then((response) => {
+        setPets(response.data);
+      });
+    console.log(response);
+  }
+
+
+
   console.log('***** handleInputChange', formValues)
   return (
     <div className="App">
-      <Navbar/>
+      
+      
+      <form onSubmit={handleSearch} className="form-inline my-2 my-lg-0">
+        <input className="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" onChange={(e) =>setFilter(e.target.value)} value={filter} ></input>
+        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+      </form>
+
+
       <form onSubmit={handleSubmit}>
         <Input name="nome" onChange={handleInputChange} value={formValues.nome} placeholder="Adicione um nome do Pet"></Input>
         <Input type="text" name="type" placeholder="Adicione um type do Pet" onChange={handleInputChange} value={formValues.type}></Input>
         <Input type="text" name="age" placeholder="Adicione a idade" onChange={handleInputChange} value={formValues.age}></Input>
         <Input type="text" name="peso" placeholder="Adicione o peso" onChange={handleInputChange} value={formValues.peso}></Input>
-        <Button name="Adicionar"/>
-        
+        <Button name="Adicionar" />
+
       </form>
 
 
@@ -65,7 +105,7 @@ function App() {
         <ul className="Cards">
           {pets.map((pet) => (
             <li key={pet.id}>
-            
+
               <Card
                 id={pet.id}
                 name={pet.name}
@@ -73,6 +113,7 @@ function App() {
                 age={pet.age}
                 weight={pet.weight}
                 handleDelete={handleDelete}
+                isDocile={pet.isDocile}
               />
 
             </li>

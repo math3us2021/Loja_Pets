@@ -1,7 +1,7 @@
 import React from "react";
 import './Navbar.css';
 
-export default function Navbar() {
+export default function Navbar(props) {
     return (
         <div>
             <nav className="navbar navbar-dark bg-dark">              
@@ -23,7 +23,7 @@ export default function Navbar() {
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
-                        <input className="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar"></input>
+                        <input className="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" onChange={props.onChange}></input>
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
                     </form>
                 </div>
@@ -31,6 +31,10 @@ export default function Navbar() {
             <div className="titulo">
             <p ><strong>Pet's</strong></p>
             </div>
+            {/* <form className="form-inline my-2 my-lg-0">
+                        <input className="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" onChange={props.onChange}></input>
+                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                    </form> */}
         </div>
         
     )

@@ -1,25 +1,20 @@
 {
   "pets": [
     {
-      "name": "matheus",
-      "type": "passaro",
-      "age": 6,
-      "weight": 30,
-      "id": 5
-    },
-    {
-      "name": "AnaLu",
-      "type": "outros",
-      "age": 3,
-      "weight": 0,
-      "id": 6
-    },
-    {
+      "id": 8,
       "name": "Zeus",
-      "type": "cachorro",
+      "type": "gato",
       "age": 4,
       "weight": 3,
-      "id": 8
+      "isDocile": true
+    },
+    {
+      "id": 10,
+      "name": "TFifi",
+      "type": "tartaruga",
+      "age": 0,
+      "weight": 0,
+      "isDocile": false
     }
   ]
 }

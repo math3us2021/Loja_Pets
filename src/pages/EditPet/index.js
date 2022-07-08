@@ -13,27 +13,7 @@ function App() {
   const [pets, setPets] = useState([]);
   const [formValues, setFormValues] = useState({});
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   axios.post("http://localhost:3004/pets",
-  //     {
-  //       name: String(formValues.nome),
-  //       type: String(formValues.type),
-  //       age: Number(formValues.age),
-  //       weight: Number(formValues.peso)
-        
-  //     })
-  //     .then((res) => {
-  //       setPets([...pets, res.data]) /// data, traz a resposta do backend
-        
-  //     }) 
-  //     setFormValues({})
-  // }
-
-
   function upDateFormValues(e) {
-
-
     axios.put(`http://localhost:3004/pets/${formValues.id}`,
       {
         name: String(formValues.name),
