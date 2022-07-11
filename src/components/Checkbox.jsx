@@ -38,10 +38,7 @@ export default ({ id, name, type, age, weight, isDocile }) => {
   console.log(checkbox);
 
   return (
-    // <select onChange={handleCheckbox}>
-    //     <option value={checkbox}>{checkbox}</option>
-    //     <option value={!checkbox}>{!checkbox}</option>
-    // </select>
+
 
     <div>
       <div className="form-check form-switch">

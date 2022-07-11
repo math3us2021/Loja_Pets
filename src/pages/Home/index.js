@@ -49,23 +49,6 @@ function App() {
 
   }
 
-  // const filterPets = pets.filter(pet => {pet.name.toLowerCase().includes(formValues.nome.toLowerCase())})
-  // console.log(filterPets)
-
-  // function handleSearc (e) {
-  //   const response = axios.get(`http://localhost:3000/pets?${formValues.name ?`type=${formValues.name}`: ""}`);
-  //   setPets(response.data);
-  // }
-
-  // const handleSearch = (e)=>{
-  //   e.preventDefault();
-  //   const filterPets = pets.filter(pet => {
-  //     return pet.name.toLowerCase().includes(formValues.nome.toLowerCase())
-  //   })
-  //   axios.get(`http://localhost:3000/pets?${formValues.name ?`type=${formValues.name}`: ""}`);
-  //   setPets(response.data);
-  //   setPets(filterPets)
-  // }
 
   function handleSearch(e) {
     e.preventDefault();
@@ -83,22 +66,22 @@ function App() {
   return (
     <div className="App">
       
-      
+      <Navbar/>
       <form onSubmit={handleSearch} className="form-inline my-2 my-lg-0">
         <input className="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" onChange={(e) =>setFilter(e.target.value)} value={filter} ></input>
         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
       </form>
 
 
-      <form onSubmit={handleSubmit}>
+      <form className="input" onSubmit={handleSubmit}>
         <Input name="nome" onChange={handleInputChange} value={formValues.nome} placeholder="Adicione um nome do Pet"></Input>
         <Input type="text" name="type" placeholder="Adicione um type do Pet" onChange={handleInputChange} value={formValues.type}></Input>
         <Input type="text" name="age" placeholder="Adicione a idade" onChange={handleInputChange} value={formValues.age}></Input>
-        <Input type="text" name="peso" placeholder="Adicione o peso" onChange={handleInputChange} value={formValues.peso}></Input>
+        <Input type="text" name="peso" placeholder="Adicione o peso" onChange={handleInputChange} value={formValues.peso}></Input>   
         <Button name="Adicionar" />
-
+      
       </form>
-
+      
 
 
       <div >

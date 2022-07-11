@@ -9,12 +9,25 @@
       "isDocile": true
     },
     {
-      "id": 10,
-      "name": "TFifi",
-      "type": "tartaruga",
-      "age": 0,
-      "weight": 0,
-      "isDocile": false
+      "name": "Fifi",
+      "type": "passaro",
+      "age": 6,
+      "weight": 12,
+      "id": 10
+    },
+    {
+      "name": "matheus",
+      "type": "cachorro",
+      "age": 4,
+      "weight": 44,
+      "id": 11
+    },
+    {
+      "name": "marcos",
+      "type": "gato",
+      "age": 1,
+      "weight": 1,
+      "id": 12
     }
   ]
 }

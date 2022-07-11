@@ -8,6 +8,16 @@ h1, h2 , h3  {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 10px 20px;
     margin: 4rem;
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin: 4rem;  
+    gap: 10px 20px;
+    align-self:flex-end
 }
