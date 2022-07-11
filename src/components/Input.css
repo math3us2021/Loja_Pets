@@ -2,11 +2,12 @@
     justify-content: center;
     text-align: center;
     background: #232332;
+    color: antiquewhite;
     border-radius: 8px;
     border: 5px solid #232332;
     gap: 3rem;
     width: 350px;
-    height: 60px;
+    height: 40px;
     align-items: center;
     -webkit-box-shadow: 11px 2px 8px 7px rgba(50, 53, 56, 0.76); 
         box-shadow: 11px 2px 8px 7px rgba(40, 43, 71, 0.76);

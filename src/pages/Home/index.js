@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import './index.css';
 
@@ -27,7 +28,7 @@ function App() {
       .then((res) => {
         setPets([...pets, res.data]) /// data, traz a resposta do backend     
       })
-    setFormValues({})
+    setFormValues() // limpa o formulário
   }
 
   const handleDelete = (id) => {
@@ -42,10 +43,17 @@ function App() {
     axios.get("http://localhost:3004/pets").then((res) => setPets(res.data));
   }, []);
 
+  function handleOnChange(e) {
+    axios.get("http://localhost:3004/pets")
+    
+      .then((res) => {
+        setPets(res.data)
+      })}
+
 
   const handleInputChange = (e) => { // escuta a mudança do input
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+    const { name, value } = e.target; // pega o name e value do input
+    setFormValues({ ...formValues, [name]: value }); // atualiza o formValues
 
   }
 
@@ -56,7 +64,9 @@ function App() {
       .get(`http://localhost:3004/pets?${filter ? `name=${filter}` : ""}`)
       .then((response) => {
         setPets(response.data);
+
       });
+
     console.log(response);
   }
 
@@ -65,11 +75,8 @@ function App() {
   console.log('***** handleInputChange', formValues)
   return (
     <div className="App">
+
       <Navbar />
-
-      {/* <Navbar onSubmit={handleSearch} onChange={(e) => setFilter(e.target.value)} value={filter} /> */}
-
-
       <form className="input" onSubmit={handleSubmit}>
         <Input name="nome" onChange={handleInputChange} value={formValues.nome} placeholder="Nome do Pet"></Input>
         <Input type="text" name="type" placeholder="Tipo do Pet" onChange={handleInputChange} value={formValues.type}></Input>
@@ -77,21 +84,16 @@ function App() {
         <Input type="text" name="peso" placeholder="Peso" onChange={handleInputChange} value={formValues.peso}></Input>
         <Button name="Adicionar" />
 
-
-     
       </form>
 
       <nav className="searchPrincipal">
         <form className="form-inline " onSubmit={handleSearch}>
-          <input className="search" type="search" placeholder="Pesquisar" aria-label="Pesquisar" onChange={(e) =>setFilter(e.target.value)} value={filter}  ></input>
+          <input className="search" type="search" placeholder="Pesquisar" aria-label="Pesquisar" onChange={(e) => setFilter(e.target.value)} value={filter}  ></input>
           <Button name="Pesquisar" type="submit">Pesquisar</Button>
         </form>
-      </nav>
-      {/* <form onSubmit={handleSearch} className="form-inline my-2 my-lg-0">
-        <input className="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" onChange={(e) =>setFilter(e.target.value)} value={filter} ></input>
-        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-      </form> */}
+        <Button name="Todos os Pets"  onClick={handleOnChange}  ></Button>
 
+      </nav>
 
       <div >
         <ul className="Cards">

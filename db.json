@@ -1,19 +1,19 @@
 {
   "pets": [
     {
-      "id": 8,
       "name": "Zeus",
-      "type": "gato",
+      "type": "cachorro",
       "age": 4,
       "weight": 3,
-      "isDocile": true
+      "id": 8
     },
     {
+      "id": 10,
       "name": "Fifi",
       "type": "passaro",
       "age": 6,
       "weight": 12,
-      "id": 10
+      "isDocile": true
     },
     {
       "id": 12,
@@ -21,14 +21,15 @@
       "type": "gato",
       "age": 1,
       "weight": 1,
-      "isDocile": true
+      "isDocile": false
     },
     {
+      "id": 13,
       "name": "Teteu",
       "type": "cachorro",
       "age": 5,
       "weight": 5,
-      "id": 13
+      "isDocile": false
     },
     {
       "id": 14,

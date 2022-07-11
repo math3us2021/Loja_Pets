@@ -2,6 +2,11 @@
 
         -webkit-box-shadow: 11px 2px 8px 7px rgba(50, 53, 56, 0.76); 
         box-shadow: 11px 2px 8px 7px rgba(40, 43, 71, 0.76);
-        background: #5c5c87;
+        background: #232332;
+        color: antiquewhite;
 
+    }
+
+    strong {
+        color: rgba(147, 153, 154, 0.83);
     }

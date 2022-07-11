@@ -28,16 +28,8 @@ function App() {
   const {id} = useParams();
   useEffect(() => {
     axios.get(`http://localhost:3004/pets/${id}`).then((res) => setFormValues(res.data));
-    
   } 
   , []);
-
-
-
-  // useEffect(() => {
-  //   axios.get("http://localhost:3004/pets").then((res) => setPets(res.data));
-  // }, []);
-
 
   const handleInputChange = (e) => { // escuta a mudança do input
     const { name, value } = e.target;

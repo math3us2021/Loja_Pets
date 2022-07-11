@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 .titulo{
     font-style: italic;
-    font-weight: 400;
-    font-size: 100px;
+    font-weight: 100;
+    font-size: 50px;
     background: #232332;
     border-radius: 300px;
     font-family: Shadows Into Light, cursive;
     color: rgba(178, 181, 184, 0.77);
-    width: 300px;
+    width: 110px;
     justify-content: center;
     display: flex;
     align-items: center;
-    margin-left: 40%;
+    margin-left: 46%;
     -webkit-box-shadow: 11px 2px 8px 7px rgba(50, 53, 56, 0.76); 
     box-shadow: 11px 2px 8px 7px rgba(40, 43, 71, 0.76);
     border: 3px solid hwb(240 79% 15%);
