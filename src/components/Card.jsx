@@ -7,7 +7,7 @@ import Checkbox from "./Checkbox";
 
 
 
-export default  (props) => {
+export default (props) => {
     
     const [isModalVisible, setIsModalVisible] = useState(false);
     function typeImage(){
@@ -25,7 +25,7 @@ export default  (props) => {
         return (
             <img className="card-img-top" src="https://sonhamos.com.br/wp-content/uploads/2020/09/sonhar-com-calopsita-colorida.jpg" alt="Imagem de capa do card"></img>)
 
-        else if (tipo.toLowerCase() == "tartaruga")
+        else if (tipo.toLowerCase() === "tartaruga")
         return (
             <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYyNN7KZJU9LTVtsJcFtjFWPZhnaK70c3EmbFH91HTzQLhKyom59_Kaf2aAo_5mnLV0t4&usqp=CAU" alt="Imagem de capa do card"></img>)
         else if (tipo.toLowerCase() === "outros")
@@ -44,7 +44,7 @@ export default  (props) => {
                     <h3 className="card-title"><strong>Nome: </strong>{props.name}</h3>
                     <p className="card-text"><strong>Tipo   : </strong>{props.type}</p>
                 </div>
-                <ul className="list-group list-group-flush">
+                <ul className="card">
                     <li className="list-group-item"><strong>Idade: </strong>{props.age}</li>
                     <li className="list-group-item"><strong>Peso: </strong>{props.weight}</li>
                     

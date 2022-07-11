@@ -22,6 +22,21 @@
       "age": 1,
       "weight": 1,
       "isDocile": true
+    },
+    {
+      "name": "Teteu",
+      "type": "cachorro",
+      "age": 5,
+      "weight": 5,
+      "id": 13
+    },
+    {
+      "id": 14,
+      "name": "Tarta",
+      "type": "tartaruga",
+      "age": 2,
+      "weight": 1,
+      "isDocile": true
     }
   ]
 }

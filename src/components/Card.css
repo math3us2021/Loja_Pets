@@ -1,7 +1,7 @@
     .card {
 
-        -webkit-box-shadow: 11px 2px 8px 7px rgba(64, 70, 79, 0.76); 
-        box-shadow: 11px 2px 8px 7px rgba(68, 75, 84, 0.76);
-        background: #cdcdd4;
+        -webkit-box-shadow: 11px 2px 8px 7px rgba(50, 53, 56, 0.76); 
+        box-shadow: 11px 2px 8px 7px rgba(40, 43, 71, 0.76);
+        background: #5c5c87;
 
     }
