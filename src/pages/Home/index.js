@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import './index.css';
 
@@ -28,7 +27,7 @@ function App() {
       .then((res) => {
         setPets([...pets, res.data]) /// data, traz a resposta do backend     
       })
-    setFormValues() // limpa o formulário
+    
   }
 
   const handleDelete = (id) => {
@@ -89,7 +88,7 @@ function App() {
       <nav className="searchPrincipal">
         <form className="form-inline " onSubmit={handleSearch}>
           <input className="search" type="search" placeholder="Pesquisar" aria-label="Pesquisar" onChange={(e) => setFilter(e.target.value)} value={filter}  ></input>
-          <Button name="Pesquisar" type="submit">Pesquisar</Button>
+          <Button name="Pesquisar" >Pesquisar</Button>
         </form>
         <Button name="Todos os Pets"  onClick={handleOnChange}  ></Button>
 

@@ -31,7 +31,7 @@ export default ({ id, name, type, age, weight, isDocile }) => {
   useEffect(() => {
     if (isDocile === true) {
       setCheckbox(true);
-      
+
     }
   }, []);
 
