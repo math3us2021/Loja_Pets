@@ -12,7 +12,7 @@ function App() {
 
   const [pets, setPets] = useState([]);
   const [formValues, setFormValues] = useState({});
-  const [filter,setFilter] = useState('');
+  const [filter, setFilter] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,23 +65,41 @@ function App() {
   console.log('***** handleInputChange', formValues)
   return (
     <div className="App">
-      
-      <Navbar/>
-      <form onSubmit={handleSearch} className="form-inline my-2 my-lg-0">
-        <input className="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" onChange={(e) =>setFilter(e.target.value)} value={filter} ></input>
-        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-      </form>
+      <Navbar />
+
+      {/* <Navbar onSubmit={handleSearch} onChange={(e) => setFilter(e.target.value)} value={filter} /> */}
 
 
       <form className="input" onSubmit={handleSubmit}>
         <Input name="nome" onChange={handleInputChange} value={formValues.nome} placeholder="Adicione um nome do Pet"></Input>
         <Input type="text" name="type" placeholder="Adicione um type do Pet" onChange={handleInputChange} value={formValues.type}></Input>
         <Input type="text" name="age" placeholder="Adicione a idade" onChange={handleInputChange} value={formValues.age}></Input>
-        <Input type="text" name="peso" placeholder="Adicione o peso" onChange={handleInputChange} value={formValues.peso}></Input>   
+        <Input type="text" name="peso" placeholder="Adicione o peso" onChange={handleInputChange} value={formValues.peso}></Input>
         <Button name="Adicionar" />
-      
+
+
+        {/* <nav class="search">
+          <form onSubmit={handleSearch} className="form-inline">
+            <input className="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" onChange={(e) => setFilter(e.target.value)} value={filter}></input>
+            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+          </form>
+        </nav> */}
+
+
+
+     
       </form>
-      
+
+      <nav className="search">
+        <form className="form-inline " onSubmit={handleSearch}>
+          <input className="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" onChange={(e) =>setFilter(e.target.value)} value={filter}  ></input>
+          <button className="btn btn-primary" type="submit">Pesquisar</button>
+        </form>
+      </nav>
+      {/* <form onSubmit={handleSearch} className="form-inline my-2 my-lg-0">
+        <input className="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" onChange={(e) =>setFilter(e.target.value)} value={filter} ></input>
+        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+      </form> */}
 
 
       <div >

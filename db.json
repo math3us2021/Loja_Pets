@@ -16,18 +16,12 @@
       "id": 10
     },
     {
-      "name": "matheus",
-      "type": "cachorro",
-      "age": 4,
-      "weight": 44,
-      "id": 11
-    },
-    {
+      "id": 12,
       "name": "marcos",
       "type": "gato",
       "age": 1,
       "weight": 1,
-      "id": 12
+      "isDocile": true
     }
   ]
 }
